@@ -1,9 +1,6 @@
 package own.helperapp.timediller.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
@@ -17,6 +14,10 @@ public class Task {
     private String summary;
     private String acceptanceCriteria;
     private String status;
+
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user; // ??
 
     public Task() {}
 
@@ -50,5 +51,13 @@ public class Task {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
