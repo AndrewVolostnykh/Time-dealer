@@ -1,13 +1,13 @@
-package own.helperapp.timediller;
+package own.hades.timedealer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TimeDillerApplication {
+public class TimeDealerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TimeDillerApplication.class, args);
+        SpringApplication.run(TimeDealerApplication.class, args);
     }
 
 }
