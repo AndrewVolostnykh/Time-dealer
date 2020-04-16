@@ -1,31 +1,28 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
+#FOR BACK-END PART OF APPLCIATION
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
+time-dealer/HELP.md
+time-dealer/target/
+!time-dealer/.mvn/wrapper/maven-wrapper.jar
+!time-dealer/**/src/main/**
+!time-dealer/**/src/test/**
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+time-dealer/*.iml
+time-dealer/.idea
+time-dealer/.*iws
+time-dealer/.*ipr
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
+#FOR FRONT-END PART OF APPLICATION
 
-### VS Code ###
-.vscode/
+time-dealer-front/node_modules
+time-dealer-front/.pnp
+time-dealer-front/.pnp.js
+time-dealer-front/coverage
+time-dealer-front/build
+time-dealer-front/npm-debug.log*
+time-dealer-front/yarn-debug.log*
+time-dealer-front/yarn-error.log*
+time-dealer-front/.env.production.local
+time-dealer-front/.env.test.local
+time-dealer-front/.env.development.local
+time-dealer-front/.env.local
+time-dealer-front/.DS_Store
