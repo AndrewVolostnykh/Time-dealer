@@ -1,22 +1,20 @@
-import React, { useState, useEffect, Component} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from "axios";
+import React, { Component } from 'react';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import UserProfile from './UserProfile';
+import Home from './Home';
 
+class App extends Component{
+	state = {}
 
-const UserProfile = () => 
-{
-  fetch('http://localhost:8190/user/profile/1').then(data => console.log(data));
-};
+	render()  { 
 
-
-
-function App() {
-  return (
-    <div className="App">
-      <UserProfile />
-    </div>
-  );
+		<Router>
+			<Switch>
+				<Route path='/' exact={true} component={Home}/>
+				<Route path='/profile' exact={true} component={UserProfile}/>
+			</Switch>
+		</Router>
+	}
 }
 
 export default App;

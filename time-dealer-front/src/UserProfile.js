@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AppNav from './AppNav';
 
 class UserProfile extends Component {
 	state = {
@@ -7,7 +8,7 @@ class UserProfile extends Component {
 	}
 
 	async componentDidMount(){
-		const response = await fetch('/user/profile/2');
+		const response = await fetch('/user/profile/1');
 		const body = await response.json();
 		this.setState({Profile : body, isLoading : false});
 	}
