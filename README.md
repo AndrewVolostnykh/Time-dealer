@@ -1,4 +1,4 @@
-#Time-dealer 
+# Time-dealer 
 
 Application created to schedule your tasks and help with soft skills. 
 ------------
