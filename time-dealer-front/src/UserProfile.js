@@ -1,40 +1,47 @@
 import React, { Component } from 'react';
-import AppNav from './AppNav';
-
+import API, { get } from "./API";
 class UserProfile extends Component {
-	state = {
-		isLoading : true,
-		Profile : null
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			isLoading : true,
+			Profile : {}
+		}
 	}
+	
 
 	async componentDidMount(){
-		const response = await fetch('/user/profile/1');
-		const body = await response.json();
-		this.setState({Profile : body, isLoading : false});
+		const { profileId } = this.props.match.params;
+		const response = await API.get(`/user/profile/${profileId}`);
+
+		this.setState({Profile: { ...response.data }, isLoading : false});
+	
 	}
 
 	render() {
-
 		const {Profile, isLoading} = this.state;
 
 		if(isLoading){
 			return (<div>Loading...</div>);
-		}
-
-		return (
-			<div>
-				<h2>Hello! {Profile.userName}</h2>
-				{
-						Profile.tasks.map( task => 
+		} else {
+			return(
+				<div>
+					<h2>Hello! {Profile.userName}</h2>
+					{
+						Profile && Profile.tasks && Profile.tasks.map( task => 
 							<div id={task.id}> 
 								<p>{task.summary}</p>
 								<p>{task.acceptance_criteria}</p>
 								<p>{task.status}</p>
 								<br/><br/>
-							</div>)
-				}
-			</div>
-		);
+							</div>
+						)
+					}
+				</div>
+			)
+		}
+
 	}
 }
 

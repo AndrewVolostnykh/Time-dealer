@@ -1,15 +1,13 @@
-import React, {Component} from 'react';
-import AppNav from './AppNav';
+import React, { Component } from 'react';
 
 class Home extends Component {
-	state = {} 
-	render() {
-		return (
-			<div>
-				<AppNav />
-			</div>
-			);
-	}
+    render() {
+        return ( 
+            <div>
+            	<h1> Wecome </h1>
+            </div>
+        )
+    }
 }
 
 export default Home;
