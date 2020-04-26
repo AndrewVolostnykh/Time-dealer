@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import UserProfile from './UserProfile';
-import Home from './Home';
-import AppNav from "./AppNav";
+import Main from './components/MainComponent';
 
 class App extends Component {
 	constructor(props) {
@@ -13,15 +11,11 @@ class App extends Component {
 
 	render() { 
 		return (
-			<div>
-				<AppNav />
-				<Router>
-					<Switch>
-						<Route path='/' exact={true} component={Home}/>
-						<Route path='/profile/:profileId' exact={true} component={UserProfile}/>
-					</Switch>
-				</Router>
-			</div>
+			<BrowserRouter>
+				<div className="App">
+					<Main />
+				</div>
+			</BrowserRouter>
 		)
 	}
 }
